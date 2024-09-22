@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ${MARKET_BOARD_POSTGRES_DB}
+      POSTGRES_USER: ${MARKET_BOARD_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${MARKET_BOARD_POSTGRES_PASSWORD}
+    ports:
+      - '${MARKET_BOARD_POSTGRES_PORT}:5432'

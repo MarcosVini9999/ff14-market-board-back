@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Player {
+  id        Int       @id @default(autoincrement())
+  nickname  String    @unique
+  gold      Int       @default(0)
+  inventory Inventory[]
+  offers    Offer[]
+}
+
+model Item {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  inventory Inventory[]
+  offers    Offer[]
+}
+
+model Inventory {
+  id        Int    @id @default(autoincrement())
+  player    Player @relation(fields: [playerId], references: [id])
+  playerId  Int
+  item      Item   @relation(fields: [itemId], references: [id])
+  itemId    Int
+  quantity  Int    @default(0)
+}
+
+model Offer {
+  id             Int      @id @default(autoincrement())
+  type           OfferType
+  pricePerUnit   Int
+  quantity       Int
+  totalValue     Int      @default(0)
+  endsAt         DateTime
+  player         Player   @relation(fields: [playerId], references: [id])
+  playerId       Int
+  item           Item     @relation(fields: [itemId], references: [id])
+  itemId         Int
+  createdAt      DateTime @default(now())
+}
+
+enum OfferType {
+  BUY
+  SELL
+}
