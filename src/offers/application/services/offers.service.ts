@@ -270,7 +270,11 @@ export class OffersService {
   }
 
   async findById(id: number): Promise<Offer> {
-    return this.offerRepository.findById(id);
+    const offer = await this.offerRepository.findById(id);
+    if (!offer) {
+      throw new NotFoundException(`Offer with ID ${id} not found`);
+    }
+    return offer;
   }
 
   async delete(id: number): Promise<void> {
