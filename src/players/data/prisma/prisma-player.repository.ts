@@ -19,4 +19,12 @@ export class PrismaPlayerRepository extends PlayerRepository {
     const playersData = await this.prisma.player.findMany();
     return playersData.map((player) => new Player(player));
   }
+
+  async findById(id: number): Promise<Player | null> {
+    return this.prisma.player.findUnique({ where: { id } });
+  }
+
+  async update(id: number, data: CreatePlayerDto): Promise<Player> {
+    return this.prisma.player.update({ where: { id }, data });
+  }
 }

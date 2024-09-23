@@ -5,9 +5,10 @@ import { PlayersModule } from './players/players.module';
 import { CoreModule } from './core/core.module';
 import { ItemsModule } from './items/items.module';
 import { InventoriesModule } from './inventories/inventories.module';
+import { OffersModule } from './offers/offers.module';
 
 @Module({
-  imports: [PlayersModule, CoreModule, ItemsModule, InventoriesModule],
+  imports: [PlayersModule, CoreModule, ItemsModule, InventoriesModule, OffersModule],
   controllers: [AppController],
   providers: [AppService],
 })
