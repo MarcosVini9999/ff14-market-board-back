@@ -1,94 +1,140 @@
 # FF14 Market Board Back-End
 
-## Descrição do Projeto
+## Project Description
 
-O "FF14 Market Board Back" é uma API desenvolvida para gerenciar um sistema de mercado inspirado no jogo Final Fantasy XIV. Este projeto permite que os jogadores gerenciem seus inventários e ofertas de itens, facilitando a interação entre eles e a troca de recursos.
+The "FF14 Market Board Back" is an API developed to manage a market system inspired by the game Final Fantasy XIV. This project allows players to manage their inventories and item offers, facilitating interaction between them and the exchange of resources.
 
-## Estrutura do Projeto
+Entendi! Aqui está a frase ajustada com as duas rotas do Swagger listadas:
 
-A estrutura do projeto é organizada em módulos, cada um responsável por uma parte específica do sistema:
+## Swagger
 
-- **Inventories**: Gerenciamento de inventários de jogadores.
-- **Offers**: Gerenciamento de ofertas de itens no mercado (em desenvolvimento).
-- **Players**: Gerenciamento de dados dos jogadores.
-- **Items**: Gerenciamento de itens disponíveis no mercado.
+The project has Swagger installed, so you can access the following routes:
 
-## Módulo de Inventários
+- **API Documentation**: [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
+- **API JSON**: [http://localhost:3000/api-json](http://localhost:3000/api-json)
 
-O módulo de inventários é responsável por gerenciar os itens que os jogadores possuem, permitindo adicionar, atualizar e remover itens do inventário.
+Aqui está a listagem das rotas da API com base no JSON que você forneceu:
 
-### Funcionalidades
+## API Routes
 
-- **Criar Inventário**: Permite que um jogador adicione um novo item ao seu inventário.
-- **Listar Inventários**: Retorna todos os itens de todos os jogadores.
-- **Buscar Inventário por ID**: Retorna os detalhes de um inventário específico.
-- **Atualizar Inventário**: Atualiza a quantidade de um item existente no inventário.
-- **Remover Inventário**: Remove um item do inventário de um jogador.
+### General
 
-## Módulo de Ofertas (Em Desenvolvimento)
+- **GET /**: Retrieves a greeting message.
 
-O módulo de ofertas será responsável por gerenciar as ofertas de itens no mercado. As funcionalidades previstas incluem:
+### Players
 
-- **Criar Oferta**: Permitir que os jogadores criem novas ofertas para itens.
-- **Listar Ofertas**: Listar todas as ofertas disponíveis no mercado.
-- **Atualizar Oferta**: Atualizar detalhes de uma oferta existente.
-- **Remover Oferta**: Remover uma oferta do mercado.
+- **POST /players**: Creates a new player.
+- **GET /players**: Retrieves all players.
+- **GET /players/{id}**: Retrieves a player by ID.
 
-## Módulo de Players
+### Items
 
-O módulo de players gerencia os dados dos jogadores, permitindo que eles se cadastrem e atualizem suas informações.
+- **POST /items**: Creates a new item.
+- **GET /items**: Retrieves all items.
+- **GET /items/{id}**: Retrieves an item by ID.
+- **PUT /items/{id}**: Updates an existing item by ID.
+- **DELETE /items/{id}**: Deletes an item by ID.
 
-### Funcionalidades
+### Inventories
 
-- **Criar Jogador**: Adiciona um novo jogador ao sistema.
-- **Listar Jogadores**: Retorna todos os jogadores cadastrados.
-- **Buscar Jogador por ID**: Retorna os detalhes de um jogador específico.
-- **Atualizar Jogador**: Atualiza as informações de um jogador existente.
-- **Remover Jogador**: Remove um jogador do sistema.
+- **POST /inventories**: Creates a new inventory.
+- **GET /inventories**: Retrieves all inventories.
+- **GET /inventories/{id}**: Retrieves an inventory by ID.
+- **PUT /inventories/{id}**: Updates an existing inventory by ID.
+- **DELETE /inventories/{id}**: Deletes an inventory by ID.
 
-## Módulo de Items
+### Offers
 
-O módulo de items gerencia os itens disponíveis no mercado, permitindo que jogadores consultem e interajam com os itens.
+- **POST /offers**: Creates a new offer.
+- **GET /offers**: Retrieves all offers.
+- **GET /offers/{id}**: Retrieves an offer by ID.
+- **PUT /offers/{id}**: Updates an existing offer by ID.
+- **DELETE /offers/{id}**: Deletes an offer by ID.
 
-### Funcionalidades
+## Project Structure
 
-- **Criar Item**: Adiciona um novo item ao sistema.
-- **Listar Itens**: Retorna todos os itens disponíveis.
-- **Buscar Item por ID**: Retorna os detalhes de um item específico.
-- **Atualizar Item**: Atualiza as informações de um item existente.
-- **Remover Item**: Remove um item do sistema.
+The project structure is organized into modules, each responsible for a specific part of the system:
 
-## Tecnologias Utilizadas
+- **Inventories**: Management of player inventories.
+- **Offers**: Management of item offers in the market (in development).
+- **Players**: Management of player data.
+- **Items**: Management of items available in the market.
 
-- **NestJS**: Framework para construção de APIs em Node.js.
-- **Prisma**: ORM para interação com o banco de dados.
-- **TypeScript**: Linguagem de programação para garantir segurança de tipos.
-- **Jest**: Framework de testes.
+## Inventories Module
 
-## Instalação
+The inventories module is responsible for managing the items that players own, allowing them to add, update, and remove items from their inventory.
 
-1. Clone o repositório:
+### Features
+
+- **Create Inventory**: Allows a player to add a new item to their inventory.
+- **List Inventories**: Returns all items from all players.
+- **Fetch Inventory by ID**: Returns the details of a specific inventory.
+- **Update Inventory**: Updates the quantity of an existing item in the inventory.
+- **Remove Inventory**: Removes an item from a player's inventory.
+
+## Offers Module
+
+The offers module will be responsible for managing item offers in the market. Planned features include:
+
+- **Create Offer**: Allow players to create new offers for items.
+- **List Offers**: List all available offers in the market.
+- **Update Offer**: Update details of an existing offer.
+- **Remove Offer**: Remove an offer from the market.
+- **Get By Id**: Get an offer by param id.
+
+## Players Module
+
+The players module manages player data, allowing them to register and update their information.
+
+### Features
+
+- **Create Player**: Adds a new player to the system.
+- **List Players**: Returns all registered players.
+- **Fetch Player by ID**: Returns the details of a specific player.
+
+## Items Module
+
+The items module manages the items available in the market, allowing players to query and interact with items.
+
+### Features
+
+- **Create Item**: Adds a new item to the system.
+- **List Items**: Returns all available items.
+- **Fetch Item by ID**: Returns the details of a specific item.
+- **Update Item**: Updates the information of an existing item.
+- **Remove Item**: Removes an item from the system.
+
+## Technologies Used
+
+- **NestJS**: Framework for building APIs in Node.js.
+- **Prisma**: ORM for database interaction.
+- **TypeScript**: Programming language to ensure type safety.
+- **Jest**: Testing framework.
+
+## Installation
+
+1. Clone the repository:
    ```bash
-   git clone https://github.com/seu_usuario/ff14-market-board-back.git
+   git clone https://github.com/your_username/ff14-market-board-back.git
    cd ff14-market-board-back
    ```
-2. Instale as dependências:
+2. Install dependencies:
    ```bash
-    npm install
+   npm install
    ```
-3. Configure o banco de dados no arquivo .env. Você pode usar o arquivo .env.example como referência.
-4. Inicie o banco de dados utilizando o Docker Compose, tenha em mente que isso é visando que você não tem nenhum banco:
+3. Configure the database in the .env file. You can use the .env.example file as a reference.
+4. Start the database using Docker Compose, assuming you don't have any database:
    ```bash
-    docker-compose up -d
+   docker-compose up -d
    ```
-5. Aplique as migrations do prisma no banco
+5. Apply the Prisma migrations to the database:
    ```bash
-    npx prisma migrate deploy
+   npx prisma migrate deploy
    ```
 
-## Rodando o Projeto
+## Running the Project
 
-1. Compile o projeto com um dos comandos:
+1. Compile the project with one of the commands:
 
    ```bash
    # Dev
@@ -97,11 +143,11 @@ O módulo de items gerencia os itens disponíveis no mercado, permitindo que jog
    # Watch
    $ npm run start:dev
 
-   # Produção
+   # Production
    $ npm run start:prod
    ```
 
-## Rodando os testes
+## Running Tests
 
 ```bash
 # unit tests
@@ -111,6 +157,6 @@ $ npm run test
 $ npm run test:cov
 ```
 
-## Autores
+## Developer
 
 - Marcos Vinicius Andrade de Sousa <marcosviniciusandradedesousa@hotmail.com>
