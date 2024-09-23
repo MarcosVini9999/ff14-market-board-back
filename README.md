@@ -1,85 +1,116 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# FF14 Market Board Back-End
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Descrição do Projeto
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+O "FF14 Market Board Back" é uma API desenvolvida para gerenciar um sistema de mercado inspirado no jogo Final Fantasy XIV. Este projeto permite que os jogadores gerenciem seus inventários e ofertas de itens, facilitando a interação entre eles e a troca de recursos.
 
-## Description
+## Estrutura do Projeto
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A estrutura do projeto é organizada em módulos, cada um responsável por uma parte específica do sistema:
 
-## Project setup
+- **Inventories**: Gerenciamento de inventários de jogadores.
+- **Offers**: Gerenciamento de ofertas de itens no mercado (em desenvolvimento).
+- **Players**: Gerenciamento de dados dos jogadores.
+- **Items**: Gerenciamento de itens disponíveis no mercado.
 
-```bash
-$ npm install
-```
+## Módulo de Inventários
 
-## Compile and run the project
+O módulo de inventários é responsável por gerenciar os itens que os jogadores possuem, permitindo adicionar, atualizar e remover itens do inventário.
 
-```bash
-# development
-$ npm run start
+### Funcionalidades
 
-# watch mode
-$ npm run start:dev
+- **Criar Inventário**: Permite que um jogador adicione um novo item ao seu inventário.
+- **Listar Inventários**: Retorna todos os itens de todos os jogadores.
+- **Buscar Inventário por ID**: Retorna os detalhes de um inventário específico.
+- **Atualizar Inventário**: Atualiza a quantidade de um item existente no inventário.
+- **Remover Inventário**: Remove um item do inventário de um jogador.
 
-# production mode
-$ npm run start:prod
-```
+## Módulo de Ofertas (Em Desenvolvimento)
 
-## Run tests
+O módulo de ofertas será responsável por gerenciar as ofertas de itens no mercado. As funcionalidades previstas incluem:
+
+- **Criar Oferta**: Permitir que os jogadores criem novas ofertas para itens.
+- **Listar Ofertas**: Listar todas as ofertas disponíveis no mercado.
+- **Atualizar Oferta**: Atualizar detalhes de uma oferta existente.
+- **Remover Oferta**: Remover uma oferta do mercado.
+
+## Módulo de Players
+
+O módulo de players gerencia os dados dos jogadores, permitindo que eles se cadastrem e atualizem suas informações.
+
+### Funcionalidades
+
+- **Criar Jogador**: Adiciona um novo jogador ao sistema.
+- **Listar Jogadores**: Retorna todos os jogadores cadastrados.
+- **Buscar Jogador por ID**: Retorna os detalhes de um jogador específico.
+- **Atualizar Jogador**: Atualiza as informações de um jogador existente.
+- **Remover Jogador**: Remove um jogador do sistema.
+
+## Módulo de Items
+
+O módulo de items gerencia os itens disponíveis no mercado, permitindo que jogadores consultem e interajam com os itens.
+
+### Funcionalidades
+
+- **Criar Item**: Adiciona um novo item ao sistema.
+- **Listar Itens**: Retorna todos os itens disponíveis.
+- **Buscar Item por ID**: Retorna os detalhes de um item específico.
+- **Atualizar Item**: Atualiza as informações de um item existente.
+- **Remover Item**: Remove um item do sistema.
+
+## Tecnologias Utilizadas
+
+- **NestJS**: Framework para construção de APIs em Node.js.
+- **Prisma**: ORM para interação com o banco de dados.
+- **TypeScript**: Linguagem de programação para garantir segurança de tipos.
+- **Jest**: Framework de testes.
+
+## Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu_usuario/ff14-market-board-back.git
+   cd ff14-market-board-back
+   ```
+2. Instale as dependências:
+   ```bash
+    npm install
+   ```
+3. Configure o banco de dados no arquivo .env. Você pode usar o arquivo .env.example como referência.
+4. Inicie o banco de dados utilizando o Docker Compose, tenha em mente que isso é visando que você não tem nenhum banco:
+   ```bash
+    docker-compose up -d
+   ```
+5. Aplique as migrations do prisma no banco
+   ```bash
+    npx prisma migrate deploy
+   ```
+
+## Rodando o Projeto
+
+1. Compile o projeto com um dos comandos:
+
+   ```bash
+   # Dev
+   $ npm run start
+
+   # Watch
+   $ npm run start:dev
+
+   # Produção
+   $ npm run start:prod
+   ```
+
+## Rodando os testes
 
 ```bash
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
 # test coverage
 $ npm run test:cov
 ```
 
-## Resources
+## Autores
 
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- Marcos Vinicius Andrade de Sousa <marcosviniciusandradedesousa@hotmail.com>
