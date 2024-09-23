@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { PlayersModule } from './players/players.module';
 import { CoreModule } from './core/core.module';
 import { ItemsModule } from './items/items.module';
+import { InventoriesModule } from './inventories/inventories.module';
 
 @Module({
-  imports: [PlayersModule, CoreModule, ItemsModule],
+  imports: [PlayersModule, CoreModule, ItemsModule, InventoriesModule],
   controllers: [AppController],
   providers: [AppService],
 })
